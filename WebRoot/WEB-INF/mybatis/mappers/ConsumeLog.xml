@@ -1,0 +1,36 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bq.family.common.mapper.ConsumeLogMapper">
+
+	<select id="queryConsumerLog" parameterType="ConsumeLog" resultType="ConsumeLog">
+		select * from
+		CONSUME_LOG
+	</select>
+	
+	<insert id="insertConsumerLog" parameterType="ConsumeLog" >
+		
+		INSERT INTO CONSUME_LOG
+		(
+		COMSUMER, 
+		MOUNT, 
+		TYPE, 
+		WAY, 
+		CONSUMEDATE
+		) 
+		VALUES
+		(
+			#{consumer},
+			#{mount},  
+			#{type}, 
+			#{way} ,
+			#{consumeDate}
+		)
+		
+	</insert>
+	
+	
+
+
+</mapper>

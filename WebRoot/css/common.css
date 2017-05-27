@@ -1,0 +1,215 @@
+@CHARSET "UTF-8";
+body{
+	height: 550px
+}
+
+#app{
+	height: 100%;
+}
+
+#totalDiv{
+	padding-left:12.5%;
+	padding-right:12.5%;
+	padding-top:20%;
+	background-color: rgb(85,233,157);
+	height:  15%;
+}
+
+#totalMount{
+	height: 20%;
+	text-align: center;
+}
+
+#kindLabel{
+	width:35%;
+	text-align: right;
+}
+
+
+#kindDiv{
+	height: 25%;
+}
+
+
+#wayAndTimeDiv{
+	height: 5%;
+	
+}
+
+#confirm{
+	background-color: gren;
+	height: 15%;
+	white-space: nowrap;
+	
+}
+
+#inputDiv{
+	height: 30%;
+}
+
+table{
+	height: 100%;
+	width: 100%;
+}
+
+#inputDiv td{
+	width: 33%;
+	height: 25%;
+}
+
+#kindDiv td{
+	width: 33%;
+	height: 25%;
+}
+
+
+#numb1{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: 0px -145px;
+}
+
+#numb2{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -95px -145px;
+}
+
+#numb3{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -190px -145px;
+}
+
+
+#numb4{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: 0px -206px;
+}
+
+#numb5{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -95px -206px;
+}
+
+#numb6{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -190px -206px;
+}
+
+#numb7{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: 0px -260px;
+}
+
+#numb8{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -95px -260px;
+}
+
+#numb9{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -190px -260px;
+}
+
+#delete{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: 0px -320px;
+}
+
+#numb0{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -95px -320px;
+}
+
+#dot{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -98px -367px;
+}
+
+#way{
+	width: 40%;
+	text-align: left;
+	white-space: nowrap;
+	
+}
+
+#time{
+	white-space: nowrap;
+	text-align: right;
+	padding: 0px;
+	vertical-align: middle;
+}
+
+
+#totalMount strong{
+	font-size: 50px;
+	color : #ffffff;
+}
+
+#kindLabel strong{
+	color : #ffffff;
+}
+
+
+#iconFood{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: 0px 10px;
+}
+
+#iconDrink{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -100px 10px;
+}
+
+#iconTraffic{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -200px 10px;
+}
+
+#iconMedicine{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: 0px -76px;
+}
+
+#iconCloth{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -100px -76px;
+}
+
+#iconOther{
+	background-image:url('../images/icon.jpg');
+	background-repeat:no-repeat;
+	background-position: -200px -76px;
+}
+
+#btnRst{
+	width:50%;
+	background-image:url('../images/submit.jpg');
+	background-repeat:no-repeat;
+	background-position: 10px 0px;
+	border: 1px;
+}
+
+#btnSubmit{
+	width:50%;
+	background-image:url('../images/submit.jpg');
+	background-repeat:no-repeat;
+	background-position: -200px 0px;
+	border: 1px;
+}
+

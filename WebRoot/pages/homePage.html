@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, 
+	initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<script type="text/javascript" src="js/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/common.css">
+
+<title>HomeEconemy</title>
+</head>
+
+<body>
+	<div id="app">
+		<div id="totalDiv">
+			<div id="kindLabel">
+				<strong v-bind:value="kindVal">类型: {{kindLable}}</strong>
+			</div>
+			<div id="totalMount">
+				<strong>¥</strong><strong id="total">{{ totalMoney }}</strong>
+			</div>
+		</div>
+		<div id="kindDiv">
+			<table>
+				<tr>
+					<td id="iconFood" v-on:click="kindSelect('美食','1')"></td>
+					<td id="iconDrink" v-on:click="kindSelect('饮料','2')"></td>
+					<td id="iconTraffic" v-on:click="kindSelect('交通','3')"></td>
+				</tr>
+				<tr>
+					<td id="iconMedicine" v-on:click="kindSelect('医药','4')"></td>
+					<td id="iconCloth" v-on:click="kindSelect('穿着','5')"></td>
+					<td id="iconOther" v-on:click="kindSelect('购物','6')"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="wayAndTimeDiv">
+			<table>
+				<tr style="line-height: 50%">
+					<td id="way"><label>消费方式:</label> <select>
+							<option value="1">支付宝</option>
+							<option value="2">微信</option>
+							<option value="3">现金</option>
+							<option value="4">银联</option>
+					</select></td>
+					<td id="time"><label>消费时间:</label> <input
+						type="datetime-local" /></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="inputDiv">
+			<table>
+				<tr>
+					<td id="numb1" class="calu" v-on:click="addNum('1')" />
+					<td id="numb2" class="calu" v-on:click="addNum('2')" />
+					<td id="numb3" class="calu" v-on:click="addNum('3')" />
+				</tr>
+				<tr>
+					<td id="numb4" class="calu" v-on:click="addNum('4')" />
+					<td id="numb5" class="calu" v-on:click="addNum('5')" />
+					<td id="numb6" class="calu" v-on:click="addNum('6')" />
+				</tr>
+				<tr>
+					<td id="numb7" class="calu" v-on:click="addNum('7')" />
+					<td id="numb8" class="calu" v-on:click="addNum('8')" />
+					<td id="numb9" class="calu" v-on:click="addNum('9')" />
+				</tr>
+				<tr>
+					<td id="delete" class="calu" v-on:click="addNum('x')" />
+					<td id="numb0" class="calu" v-on:click="addNum('0')" />
+					<td id="dot" class="calu" v-on:click="addNum('.')" />
+				</tr>
+
+			</table>
+		</div>
+		<div id="confirm">
+			<table>
+				<tr>
+					<td id="btnRst" />
+					<td id="btnSubmit" v-on:click="submitConsume()"/>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	var cal = new Vue(
+			{
+				el : '#app',
+				data : {
+					totalMoney : '0',
+					kindLable : '美食',
+					kindVal:'1'
+				},
+				methods : {
+					addNum : function(val) {
+
+						if (val == 'x') {
+
+							if (cal.totalMoney.length == 1) {
+								cal.totalMoney = 0;
+							} else {
+								cal.totalMoney = cal.totalMoney.substring(0,
+										cal.totalMoney.length - 1);
+								if (cal.totalMoney.lastIndexOf('.') == (cal.totalMoney.length - 1)) {
+									cal.totalMoney = cal.totalMoney.substring(
+											0, cal.totalMoney.length - 1);
+								}
+							}
+						} else {
+
+							if (cal.totalMoney == '0' && val != '.') {
+								cal.totalMoney = val;
+							} else {
+
+								if (val == '.'
+										&& cal.totalMoney.lastIndexOf('.') != '-1') {
+									alert("数字不对哦，亲");
+									return;
+								}
+
+								cal.totalMoney = cal.totalMoney + val;
+							}
+
+						}
+
+					},
+
+					kindSelect : function(key, val) {
+						cal.kindLable = key;
+						cal.kindVal = val;
+					},
+					
+					submitConsume:function(val){
+						 this.$http.get('handler.do', function(data) {
+						        alert("1");
+						    }).error(function(data, status, request) {
+						        console.log('fail' + status + "," + request);
+						    })
+					}
+				}
+			});
+</script>
+</html>
